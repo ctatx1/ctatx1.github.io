@@ -84,7 +84,7 @@
 				<ul id="nav" class="sf-menu">
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="blog.html">BLOG</a></li>
-					<li class="current-menu-item"><a href="page.html">ABOUT</a>
+					<li><a href="page.html">ABOUT</a>
 						<ul>
 							<li><a href="page-elements.html">Elements</a></li>
 							<li><a href="page-icons.html">Icons</a></li>
@@ -92,8 +92,7 @@
 						</ul>
 					</li>
 					<li><a href="portfolio.html">WORK</a></li>
-					<li><a href="contact.html">CONTACT</a></li>
-					<li><a href="http://luiszuno.com/blog/downloads/simpler-template">DOWNLOAD NOW</a></li>
+					<li class="current-menu-item"><a href="contact.html">CONTACT</a></li>
 				</ul>
 				<!-- ends nav -->
 				
@@ -101,12 +100,12 @@
 				<select id="comboNav">
 					<option value="index.html" >HOME</option>
 					<option value="blog.html">BLOG</option>
-					<option value="page.html" selected="selected">ABOUT</option>
+					<option value="page.html">ABOUT</option>
 					<option value="page-elements.html">- Elements -</option>
 					<option value="page-icons.html">- Icons -</option>
 					<option value="page-typography.html">- Typography -</option>
 					<option value="portfolio.html">WORK</option>
-					<option value="http://luiszuno.com/blog/downloads/simpler-template">DOWNLOAD NOW</option>
+					<option value="contact.html" selected="selected">CONTACT</option>
 				</select>
 				<!-- comboNav -->
 				
@@ -121,69 +120,104 @@
 
 				<!-- masthead -->
 				<div class="masthead clearfix">
-					<h1>ABOUT</h1><span class="subheading">Columns layout</span>
+					<h1>CONTACT</h1><span class="subheading">Get in touch</span>
 				</div>
 				<div class='mh-div'></div>
 				<!-- ENDS masthead -->
 				
 				<!-- page content -->
-	        	<div id="page-content" class="clearfix">        	
+	        	<div id="page-content" class="clearfix"> 
 	        	
+	        		<!-- GOOGLE MAPS -->
+					<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAyXu_1Zw3-DbyonSxgLICyxSvd_PWAzQYT6cPPLRqr8-D213wYRS98SYvGv88GueR8G34jgm2pizkyA" ></script>
+					<script type="text/javascript" >google.load("maps","2.x");</script>
+					
+					<script type="text/javascript">
+						
+						jQuery(document).ready(function($) {
+						
+						//##########################################
+						// Google maps
+						//##########################################
+						
+						// You can get the latitud and Longitude values at http://itouchmap.com/latlong.html
+						
+						var latitude = 44.8011821;
+						var longitude = -68.7778138;
+						
+						// center map
+						var map = new GMap2(document.getElementById("map")); 
+						var point = new GLatLng(latitude, longitude); 
+						map.setCenter(point, 16);
+						
+						// Set marker
+						marker = new GMarker(point); 
+						map.addOverlay(marker);
+						
+						// controls
+						map.addControl(new GLargeMapControl());
+						
+						});
+					</script>
+					<h4 class="heading">Location</h4>
+					<div id="map"></div>
+					<!-- ENDS GOOGLE MAPS -->
+       	
+	        		<div class='section-div'></div>
+	        		
 					<!-- 2 cols -->
-					<div class="one-half">
-						<h4 class="heading">One half columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+					<div class="left-page-block">
+						<h4 class="heading">Contact form</h4>
+						<!-- form -->
+						<script type="text/javascript" src="js/form-validation.js"></script>
+						<form id="contactForm" action="#" method="post">
+							<p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
+							<fieldset>
+								<div>
+									<input name="name"  id="name" type="text" class="form-poshytip" title="Enter your full name" />
+									<label>Name</label>
+								</div>
+								<div>
+									<input name="email"  id="email" type="text" class="form-poshytip" title="Enter your email address" />
+									<label>Email</label>
+								</div>
+								<div>
+									
+									<input name="web"  id="web" type="text" class="form-poshytip" title="Enter your website" />
+									<label>Website</label>
+								</div>
+								<div>
+									<textarea  name="comments"  id="comments" rows="5" cols="20" class="form-poshytip" title="Enter your comments"></textarea>
+								</div>
+								
+								<!-- send mail configuration -->
+								<input type="hidden" value="your@email.com" name="to" id="to" />
+								<input type="hidden" value="ENter the subject here" name="subject" id="subject" />
+								<input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
+								<!-- ENDS send mail configuration -->
+								
+								<p><input type="button" value="Send" name="submit" id="submit" /> <span id="error" class="warning">Message</span></p>
+							</fieldset>
+							
+						</form>
+						<p id="sent-form-msg" class="success">Form data sent. Thanks for your comments.</p>
+						<!-- ENDS form -->
 					</div>
 					
-					<div class="one-half last">
-						<h4 class="heading">One half columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+					<div class="right-page-block">
+						<h4 class="heading">Address info</h4>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si tincidunt quis, accumsan porttitor, facilisis luctus, mets.</p>
+		        		
+		        		<ul class="address-block">
+		        			<li class="address">Address line, city, state ZIP</li>
+		        			<li class="phone">+123 456 789</li>
+		        			<li class="mobile">+123 456 789</li>
+		        			<li class="email"><a href="mailto:email@server.com">email@server.com</a></li>
+		        		</ul>
 					</div>
-					<div class="clearfix"></div>
 					<!-- ENDS 2 cols -->
 					
 					
-					<!-- 3 cols -->
-					<div class="one-third">
-						<h4 class="heading">One third columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-					</div>
-					
-					<div class="one-third">
-						<h4 class="heading">One third columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-					</div>
-					
-					<div class="one-third last">
-						<h4 class="heading">One third columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
-					</div>
-					<div class="clearfix"></div>
-					<!-- ENDS 3 cols -->
-					
-					
-					<!-- 4 cols -->
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-					</div>
-					
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-					</div>
-					
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-					</div>
-					
-					<div class="one-fourth last">
-						<h4 class="heading">One fourth columns</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-					</div>
-					<div class="clearfix"></div>
-					<!-- ENDS 4 cols -->
 					
 					
 				
