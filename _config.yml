@@ -7,7 +7,7 @@ github: https://github.com/ctatx1
 about: I am a Freelance Web Developer at Intelligent Works Design. I love working on backend and frontend technologies. #<a href="https://www.build.com" target="_blank">Build.com</a>*/ 
 disqus_shortname: programming
 #google_analytics: UA-31048387-6
-avatar_url:/static/img/10350338_10204067694679999_7757015693539131175_n.jpg
+avatar_url:"https://ctatx1.github.io//static/img/10350338_10204067694679999_7757015693539131175_n.jpg"
 #/static/img/68536994.jpg
 #ctatx1.github.io/static/img/68536994.jpg
 enableTags: true
